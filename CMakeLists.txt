@@ -1,6 +1,14 @@
 cmake_minimum_required( VERSION 3.5 )
 project(citty)
 
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Debug)
+endif()
+
+set(CMAKE_C_FLAGS "-Wall -Wextra")
+set(CMAKE_C_FLAGS_DEBUG "-g")
+set(CMAKE_C_FLAGS_RELEASE "-O3")
+
 set( OpenGL_GL_PREFERENCE "GLVND" )
 find_package(OpenGL 3.3 REQUIRED)
 
